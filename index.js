@@ -39,7 +39,7 @@ server.put('/cliente/:id', async function(request, response) {
     await Clientes.findByIdAndUpdate(id, cliente);
     return response.status(200).send();
     
-    
+
     // clientes.forEach(cli => {
     //     if(cli.id == id) {
     //         cli.nome = cliente.nome;
@@ -57,4 +57,4 @@ server.delete('/cliente/:id', async function(request, response) {
     return response.status(200).send();
 });
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
